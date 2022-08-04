@@ -1,4 +1,5 @@
 import '../App.css'
+import{Link} from "react-router-dom"
 
 export function Categories(){
     return(
@@ -6,28 +7,31 @@ export function Categories(){
   <section className="categories-container main-wrapper">
     <ul className="categories-container__list">
       {/* <!-- Single category --> */}
-      <li>
+<
+li>
         {/* <!-- Use the Link component from React Router to create  */}
               {/* the anchor tags */}
         {/* --> */}
-        <a href="/categories/1">electronics</a>
+        <Link to="/categories/1">electronics</Link>
       </li>
       {/* <!--  --> */}
       <li>
-        <a href="/categories/2">jewelery</a>
+      <Link to="/categories/2">jewelery</Link>
+
       </li>
       {/* <!--  --> */}
       <li>
-        <a href="/categories/3">men's clothing</a>
+        <Link to="/categories/3">men's clothing</Link>
       </li>
       {/* <!--  --> */}
       <li>
-        <a href="/categories/4">women's clothing</a>
+        <Link to="/categories/4">women's clothing</Link>
       </li>
       {/* <!--  --> */}
     </ul>
   </section>
 </main>
+
 
     )
 }

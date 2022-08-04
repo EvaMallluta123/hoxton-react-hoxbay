@@ -32,7 +32,7 @@ type  Products=
 
             return(
                 <main>
-{/* {item.map(items=>( */}
+
 <section className="product-detail main-wrapper">
     <img
       src={item.image}
@@ -49,7 +49,7 @@ type  Products=
       <button>Add to basket</button>
     </div>
   </section>
-  {/* ))} */}
+
 </main>
 
             )

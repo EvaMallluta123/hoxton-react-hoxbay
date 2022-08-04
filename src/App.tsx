@@ -5,6 +5,7 @@ import { Categories } from './components/Categories'
 import { ProductDetail } from './components/ProductDetail'
 import { PageNotFound } from './components/PageNotFound'
 import { Basket } from './components/Basket'
+import { CategoriesItem } from './components/CategorisItem'
 
 function App() {
   return (
@@ -15,9 +16,11 @@ function App() {
         <Routes>
         <Route path='/products' element={<Products/>} /> 
         <Route path='/categories' element={<Categories/>} /> 
-        <Route path='/products/:id' element={<ProductDetail/>} />
+        <Route path='/products/:id' element={<ProductDetail/>} /> 
         <Route path='*' element={<PageNotFound />} />
-        <Route path='basket' element={<Basket />} />
+        <Route path='/basket' element={<Basket />} />
+        <Route path='/categories/:id' element={<CategoriesItem />} />
+
 
         </Routes>
        
