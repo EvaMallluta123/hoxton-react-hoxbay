@@ -15,7 +15,7 @@ type  Products=
             const params=useParams()
 
             useEffect(()=>{
-                fetch(`http://localhost:4000/products${params.id}`)
+                fetch(`http://localhost:4000/products/${params.id}`)
                 .then (resp=>resp.json())
                 .then(ItemFromServer=>setItem(ItemFromServer))
             }, [])
