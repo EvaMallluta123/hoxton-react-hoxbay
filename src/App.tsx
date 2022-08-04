@@ -4,6 +4,7 @@ import Products from './components/Products'
 import { Categories } from './components/Categories'
 import { ProductDetail } from './components/ProductDetail'
 import { PageNotFound } from './components/PageNotFound'
+import { Basket } from './components/Basket'
 
 function App() {
   return (
@@ -15,9 +16,11 @@ function App() {
         <Route path='/products' element={<Products/>} /> 
         <Route path='/categories' element={<Categories/>} /> 
         <Route path='/products/:id' element={<ProductDetail/>} />
-        {/* <Route path='*' element={<PageNotFound />} /> */}
+        <Route path='*' element={<PageNotFound />} />
+        <Route path='basket' element={<Basket />} />
 
         </Routes>
+       
       </main>
     </>
   )
