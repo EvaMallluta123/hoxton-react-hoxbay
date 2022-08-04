@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import{Link} from "react-router-dom"
+import { ProductDetail } from "./ProductDetail";
 
  
 function Products() {
@@ -12,12 +13,14 @@ function Products() {
           categoryId: number
           image: string
         }
+
     const[products, setProduct]=useState<Products[]>([])
+
     useEffect(()=>{
         fetch(`http://localhost:4000/products`)
         .then (resp=>resp.json())
         .then(productFromServer=>setProduct(productFromServer))
-    }, [])
+    }, []) 
     return (
 <main>
   <section className="products-container main-wrapper">

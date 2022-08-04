@@ -10,7 +10,8 @@ type  Products=
           image: string
         }
         export function ProductDetail(){
-            const[item, setItem]=useState<Products[]>([])
+          const[item, setItem]=useState<null | Products> (null)
+
 
             const params=useParams()
 
@@ -31,24 +32,24 @@ type  Products=
 
             return(
                 <main>
-{item.map(items=>(
+{/* {item.map(items=>( */}
 <section className="product-detail main-wrapper">
     <img
-      src={items.image}
-      alt={items.title}
+      src={item.image}
+      alt={item.title}
     />
-    <div class="product-detail__side" style="border-color: var(--yellow)">
+    <div className="product-detail__side">   {/*style="border-color: var(--yellow)" > */}
       <h3></h3>
-      <h2>{items.title}</h2>
+      <h2>{item.title}</h2>
       <p>
-        {items.description}
+        {item.description}
       </p>
-      <p>{items.price}</p>
+      <p>{item.price}</p>
       {/* <!-- Once you click in this button, the user should be redirected to the Basket page --> */}
       <button>Add to basket</button>
     </div>
   </section>
-  ))}
+  {/* ))} */}
 </main>
 
             )
