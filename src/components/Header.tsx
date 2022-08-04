@@ -18,7 +18,7 @@ function Header() {
         <ul>
           <li>
             {/* Create here a link to this page */}
-            <Link to="/home">Home</Link>
+            <Link to="/products">Home</Link>
           </li>
           <li>
             {/* Create here a link to this page */}

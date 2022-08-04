@@ -1,7 +1,8 @@
 import Header from './components/Header'
 import { Route, Routes } from 'react-router-dom'
-import Home from './components/Home'
+import Products from './components/Products'
 import { Categories } from './components/Categories'
+import { ProductDetail } from './components/ProductDetail'
 
 function App() {
   return (
@@ -10,8 +11,9 @@ function App() {
       <main>
         {/* Create your routes here. Don't forget to install the router package! */}
         <Routes>
-        <Route path='/home' element={<Home />} /> 
+        <Route path='/products' element={<Products/>} /> 
         <Route path='/categories' element={<Categories/>} /> 
+        <Route path='/products:id' element={<ProductDetail/>} />
 
         </Routes>
       </main>
