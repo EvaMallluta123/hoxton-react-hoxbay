@@ -13,13 +13,11 @@ function Products() {
           categoryId: number
           image: string
         }
-
-    const[products, setProduct]=useState<Products[]>([])
-
+        const[products, setProducts]=useState<Products[]>([])
     useEffect(()=>{
         fetch(`http://localhost:4000/products`)
         .then (resp=>resp.json())
-        .then(productFromServer=>setProduct(productFromServer))
+        .then(productFromServer=>setProducts(productFromServer))
     }, []) 
     return (
 <main>

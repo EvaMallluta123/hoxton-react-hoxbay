@@ -11,8 +11,6 @@ type  Products=
         }
         export function ProductDetail(){
           const[item, setItem]=useState<null | Products> (null)
-
-
             const params=useParams()
 
             useEffect(()=>{
@@ -28,7 +26,7 @@ type  Products=
       </div>
     )
 
-    if (item.id === undefined) return <Navigate to="/home" />
+    if (item.id === undefined) return <Navigate to="/products" />
 
             return(
                 <main>

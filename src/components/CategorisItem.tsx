@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import{Link} from "react-router-dom"
-import { Navigate,useParams } from "react-router-dom";
+import {useParams } from "react-router-dom";
 
 
 export function CategoriesItem (){
@@ -14,24 +13,38 @@ export function CategoriesItem (){
           categoryId: number
           image: string
         }
-    const[products, setProducts]=useState<Products[]>([])
+        type Categories={
+             id: number,
+            name: string 
+        }
+    const [item, setItem]=useState<null | Categories> (null)
+
+    useEffect(()=>{
+        fetch(`http://localhost:4000/categories/${params.id}`)
+        .then (resp=>resp.json())
+        .then(ItemFromServer=>setItem(ItemFromServer))
+    }, [])
+
     const params=useParams()
 
+    const[products, setProducts]=useState<Products[]>([])
 
-        useEffect(()=>{
-            fetch(`http://localhost:4000/products?_expand=category&categoryId=${params.id}`)
-            .then (resp=>resp.json())
-            .then(productFromServer=>setProducts(productFromServer))
-        }, []) 
-        const FilteredProducts=products.filter(product=>product.categoryId===product.id)
+    useEffect(()=>{
+        fetch(`http://localhost:4000/products`)
+        .then (resp=>resp.json())
+        .then(productFromServer=>setProducts(productFromServer))
+    }, []) 
+        const FilteredProducts=products.filter(product=>product.categoryId===item?.id)
     return(
         <main>
   <section className="products-container main-wrapper">
     <ul className="products-container__list">
       {/* <!-- Single item --> */}
       {FilteredProducts.map(product=>(
+        
+    
       <li>
-        <Link to={`/products/${product.id}`}>
+        {/* <Link to={`/products/${product.id}`}> */}
     
           <article className="product-item">
             <img
@@ -41,7 +54,7 @@ export function CategoriesItem (){
             <h3>{product.title}</h3>
           </article>
           
-          </Link>
+          {/* </Link> */}
       </li>
       ))}
     </ul>
