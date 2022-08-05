@@ -18,7 +18,7 @@ function App() {
         <Route path='/categories' element={<Categories/>} /> 
         <Route path='/products/:id' element={<ProductDetail/>} /> 
         <Route path='*' element={<PageNotFound />} />
-        <Route path='/basket' element={<Basket />} />
+        <Route path='/basket/:id' element={<Basket />} />
         <Route path='/categories/:id' element={<CategoriesItem />} />
 
 

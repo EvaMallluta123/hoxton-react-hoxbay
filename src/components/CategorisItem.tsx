@@ -44,7 +44,7 @@ export function CategoriesItem (){
         
     
       <li>
-        {/* <Link to={`/products/${product.id}`}> */}
+       
     
           <article className="product-item">
             <img
@@ -54,7 +54,7 @@ export function CategoriesItem (){
             <h3>{product.title}</h3>
           </article>
           
-          {/* </Link> */}
+         
       </li>
       ))}
     </ul>

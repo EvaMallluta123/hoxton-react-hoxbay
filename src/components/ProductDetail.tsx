@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Navigate,useParams } from "react-router-dom";
+import{Link} from "react-router-dom"
+
 type  Products=
         {
           id: number,
@@ -44,7 +46,7 @@ type  Products=
       </p>
       <p>{item.price}</p>
       {/* <!-- Once you click in this button, the user should be redirected to the Basket page --> */}
-      <button>Add to basket</button>
+      <Link to={`/basket/${item.id}`}><button>Add to basket</button></Link>
     </div>
   </section>
 
